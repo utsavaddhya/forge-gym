@@ -21,7 +21,7 @@
       --ease:    cubic-bezier(0.4,0,0.2,1);
     }
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
+    html { scroll-behavior:smooth; overflow-x:hidden; }
     body {
       background: var(--bg); color: var(--white);
       font-family: 'Outfit', sans-serif; font-weight: 300;
@@ -384,6 +384,20 @@
       .cta-banner { padding:80px 24px; }
       .hero-scr { display:none; }
       .hero-acts { flex-direction:column; align-items:flex-start; }
+
+      /* Fix 4: hide cursor on mobile */
+      .cursor, .cursor-ring { display:none !important; }
+      body { cursor:auto; }
+
+      /* Fix 3: footer bottom stack */
+      .ft-btm { flex-direction:column; gap:8px; text-align:center; }
+
+      /* Fix 2: plans single column on mobile */
+      .plans { grid-template-columns:1fr; max-width:100%; }
+
+      /* Fix: abt-badge position so it doesn't overflow */
+      .abt-badge { right:10px; bottom:20px; }
+      .abt-img img { height:320px; }
     }
   </style>
 </head>
